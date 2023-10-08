@@ -3,11 +3,11 @@
     <div class="sidenav__container-logo">Platz für Logo</div>
 
     <ul class="sidenav__list">
-      <li>
+      <li routerLink="/dashboard">
         <mat-icon> dashboard </mat-icon>
         Dashboard
       </li>
-      <li>
+      <li routerLink="/user">
         <mat-icon> person </mat-icon>
         User
       </li>
@@ -21,5 +21,10 @@
       </mat-icon>
       <span>Simple CRM</span>
     </mat-toolbar>
+
+    <div class="router__container">
+      <router-outlet></router-outlet>
+    </div>
+
   </div>
 </mat-drawer-container>

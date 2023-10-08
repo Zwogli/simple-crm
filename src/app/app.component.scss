@@ -32,9 +32,17 @@
       align-items: center;
       gap: 16px;
       cursor: pointer;
+
       &:hover{
-        background-color: rgba(0,0,0,0.25);
+        background-color: rgba(0,0,0,0.2);
+      }
+      &:focus{
+        outline: none;
       }
     }
   }
+}
+.router__container{
+  padding-left: 56px;
+  padding-top: 16px;
 }
