@@ -12,9 +12,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, UserComponent],
+  declarations: [AppComponent, DashboardComponent, UserComponent, DialogAddUserComponent],
 
   imports: [
     BrowserModule, 
@@ -25,7 +30,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatButtonModule,
     MatSidenavModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
 

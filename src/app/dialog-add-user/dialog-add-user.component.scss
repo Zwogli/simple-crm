@@ -1,0 +1,11 @@
+.dialog__input{
+  &-container-name, &-container-city{
+    display: flex;
+    gap: 16px;
+  } 
+}
+
+.mdc-dialog__actions{
+  padding: 9px 24px;
+  justify-content: space-between;
+}
