@@ -1,0 +1,40 @@
+.mat__drawer-container{
+  height: 100dvh;
+}
+
+.mat__toolbar{
+  min-height: 56px;
+  height: 56px;
+  gap: 16px;
+  &-icon{
+    cursor: pointer;
+  }
+}
+
+.sidenav{
+  width: 300px;
+  &__container-logo{
+    padding: 0 16px;
+    min-height: calc(56px - 1px);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+  }
+  &__list{
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+
+    li{
+      padding: 0 16px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      &:hover{
+        background-color: rgba(0,0,0,0.25);
+      }
+    }
+  }
+}
