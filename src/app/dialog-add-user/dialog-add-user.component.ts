@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Firestore, addDoc, collection, doc} from '@angular/fire/firestore';
+import { MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 
 @Component({
@@ -13,7 +14,7 @@ export class DialogAddUserComponent {
   birthDate!: Date;
   loading: boolean = false;
 
-  constructor(){
+  constructor(public dialog: MatDialogRef<DialogAddUserComponent>){
   }
 
   async saveUser(){
@@ -24,8 +25,7 @@ export class DialogAddUserComponent {
     let newUser = this.user.toJSON();
 
     this.addUser(newUser);
-
-    this.loading = false;
+    this.close();
   }
 
   async addUser(newUser){
@@ -34,6 +34,7 @@ export class DialogAddUserComponent {
     ).then(
       (docRef) => {console.log("Document written with ID: ", docRef)}
     )  
+    this.loading = false;
   }
 
   /**return firestore collection
@@ -52,5 +53,9 @@ export class DialogAddUserComponent {
    */
   getSingleDocReference(collId:string, docId:string){
     return doc(collection(this.firestore, collId), docId);
+  }
+
+  close(): void {
+    this.dialog.close();
   }
 }
