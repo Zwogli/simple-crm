@@ -19,6 +19,13 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(0,0,0,0.5);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+    img{
+      max-height: calc(56px - 1px);
+    }
   }
   &__list{
     margin: 0;
