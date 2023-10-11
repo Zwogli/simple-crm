@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Firestore, collection, doc} from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, doc} from '@angular/fire/firestore';
 import { User } from 'src/models/user.class';
 
 @Component({
@@ -11,20 +11,29 @@ export class DialogAddUserComponent {
   firestore: Firestore = inject(Firestore);
   user = new User();  //user(variable) = new User (instance)
   birthDate!: Date;
+  loading: boolean = false;
 
   constructor(){
   }
 
-  saveUser(){
+  async saveUser(){
+    this.loading = true;
     this.user.birthDate = this.birthDate.getTime();
     console.log('Current User is', this.user)
 
-/**
- *todo     this.firestore.collection("data").document("one").setData(this.user)
- *todo       .then((result:any) => {
- *todo       console.log('adding user to firestore', result)
- *todo     });
- */
+    let newUser = this.user.toJSON();
+
+    this.addUser(newUser);
+
+    this.loading = false;
+  }
+
+  async addUser(newUser){
+    await addDoc(this.getUserReference(), newUser).catch(  // What need addDoc( [where], [wich item])
+    (err) => {console.error(err)}
+    ).then(
+      (docRef) => {console.log("Document written with ID: ", docRef)}
+    )  
   }
 
   /**return firestore collection

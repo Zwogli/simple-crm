@@ -1,3 +1,10 @@
+.dialog__container{
+  position: relative;
+  mat-progress-bar{
+    position: absolute;
+    bottom: 0;
+  }
+}
 .dialog__input{
   &-container-name, &-container-city{
     display: flex;
