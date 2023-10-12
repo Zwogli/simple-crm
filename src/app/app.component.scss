@@ -19,12 +19,13 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(0,0,0,0.5);
-    background-color: white;
+    // background-color: white;
     display: flex;
     justify-content: center;
     object-fit: cover;
     img{
       max-height: calc(56px - 1px);
+      filter: drop-shadow(0px 0px 1px white)
     }
   }
   &__list{
