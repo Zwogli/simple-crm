@@ -7,16 +7,10 @@
         <th>City</th>
       </tr>
 
-      <tr>
-        <td>test</td>
-        <td>who</td>
-        <td>what</td>
-      </tr>
-
-      <tr>
-        <td>test</td>
-        <td>who</td>
-        <td>what</td>
+      <tr *ngFor="let user of allUsers">
+        <td>{{ user.firstName }} {{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.city }}</td>
       </tr>
 
     </table>
