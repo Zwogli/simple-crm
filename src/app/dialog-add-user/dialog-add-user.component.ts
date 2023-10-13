@@ -20,7 +20,7 @@ export class DialogAddUserComponent {
   async saveUser(){
     this.loading = true;
     this.user.birthDate = this.birthDate.getTime();
-    console.log('Current User is', this.user)
+    // console.log('Current User is', this.user)
 
     let newUser = this.user.toJSON();
 

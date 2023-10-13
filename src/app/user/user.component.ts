@@ -31,11 +31,12 @@ export class UserComponent {
   }
 
   readSubscribeUser(){
-    this.unsubUser = onSnapshot(this.getUserReference(), (userList) => {
-      this.allUsers = [];
-      userList.forEach(userListElement =>{
-        console.log('User Liste: ', userListElement.data())
-        this.allUsers.push(userListElement.data());
+    this.unsubUser = onSnapshot(
+      this.getUserReference(), (allUsersDoc) => {   // onSnapshot( [which database] , [function what todo] )
+      this.allUsers = [];                           // reset array
+      allUsersDoc.forEach(singleUserDoc =>{         // firebase document loop => read single entry
+        this.allUsers.push(singleUserDoc.data());   // push single entry into array
+        console.log('User Liste: ', singleUserDoc.data())
       });
       console.log(this.allUsers);
     });
