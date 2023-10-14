@@ -1,0 +1,28 @@
+.user__detail-header{
+  min-height: 300px;
+  padding: 20px;
+  background-color: #7b1fa2;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  // align-items: center;
+
+   img{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border: 1px solid white;
+    object-fit: cover;
+    }
+}
+.user__detail-header-details{
+  min-height: 100px;
+  margin-left: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h2{
+    margin-bottom: 0;
+  }
+}
