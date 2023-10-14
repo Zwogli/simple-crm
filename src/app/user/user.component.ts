@@ -35,8 +35,9 @@ export class UserComponent {
       this.getUserReference(), (allUsersDoc) => {   // onSnapshot( [which database] , [function what todo] )
       this.allUsers = [];                           // reset array
       allUsersDoc.forEach(singleUserDoc =>{         // firebase document loop => read single entry
-        this.allUsers.push(singleUserDoc.data());   // push single entry into array
-        console.log('User Liste: ', singleUserDoc.data())
+        // console.log('User Liste: ', singleUserDoc.data())
+        // console.log('User Id: ', singleUserDoc.id)
+        this.allUsers.push(this.setUserObject(singleUserDoc.data(), singleUserDoc.id));   // push single entry into array
       });
       console.log(this.allUsers);
     });
@@ -64,4 +65,18 @@ export class UserComponent {
   destroySubscribe(){
     this.unsubUser();
   }
+
+  setUserObject(obj: any, docId: string) {
+    return{
+      id: docId,
+      firstName: obj.firstName || '',
+      lastName: obj.lastName || '',
+      email: obj.email || '',
+      birthDate: obj.birthDate || '',
+      street: obj.street || '',
+      zipCode: obj.zipCode || '',
+      city: obj.city || '',
+    }
+  }
+
 }
