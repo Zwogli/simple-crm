@@ -28,4 +28,6 @@ export class UserDetailComponent {
   getSingleDocReference(collId: string, docId: string) {5
     return doc(collection(this.firestore, collId), docId);
   }
+
+  openDialogAdress(){}
 }
