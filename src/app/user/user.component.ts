@@ -35,11 +35,11 @@ export class UserComponent {
       this.getUserReference(), (allUsersDoc) => {   // onSnapshot( [which database] , [function what todo] )
       this.allUsers = [];                           // reset array
       allUsersDoc.forEach(singleUserDoc =>{         // firebase document loop => read single entry
+        this.allUsers.push(this.setUserObject(singleUserDoc.data(), singleUserDoc.id));   // push single entry into array
         // console.log('User Liste: ', singleUserDoc.data())
         // console.log('User Id: ', singleUserDoc.id)
-        this.allUsers.push(this.setUserObject(singleUserDoc.data(), singleUserDoc.id));   // push single entry into array
       });
-      console.log(this.allUsers);
+      // console.log(this.allUsers);
     });
   }
 

@@ -2,8 +2,8 @@
   
   <img src="assets/img/avatar-woman.png" alt="avatar">
   <div class="user__detail-header-details">
-    <h2>Max Mustermann</h2>
-    <span>email@maxMuster.de</span>
+    <h2>{{ user.firstName }} {{ user.lastName}}</h2>
+    <span>{{ user.email }}</span>
   </div>
     
 </mat-card>
@@ -15,7 +15,7 @@
   </mat-card-header>
 
   <mat-card-content>
-    Musertsstr. 23 <br>
-    12345 Musterstadt
+    {{ user.street}} <br>
+    {{ user.zipCode }} {{ user.city }}
   </mat-card-content>
 </mat-card>
