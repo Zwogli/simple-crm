@@ -14,7 +14,9 @@ export class DialogEditContactComponent {
 
   constructor(public dialog: MatDialogRef<DialogEditContactComponent>){} 
 
-  closeDialogContact(){}
-
   saveUserDialogContact(){}
+  
+  closeDialogContact(){
+    this.dialog.close();
+  }
 }

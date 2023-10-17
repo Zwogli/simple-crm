@@ -13,7 +13,9 @@ loading: boolean = false;
 
 constructor(public dialog: MatDialogRef<DialogEditAdressComponent>){} 
 
-closeDialogAddress(){}
-
 saveUserDialogAddress(){}
+
+closeDialogAddress(){
+  this.dialog.close();
+}
 }

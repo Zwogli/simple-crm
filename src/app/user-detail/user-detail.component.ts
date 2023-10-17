@@ -34,11 +34,11 @@ export class UserDetailComponent {
 
   editAdress(){
     const dialog = this.dialog.open(DialogEditAdressComponent); // define dialog
-    dialog.componentInstance.user = this.user; // formed passing the variables to the dialog
+    dialog.componentInstance.user = new User(this.user.toJSON()); // copy from user address
   }
 
   editContact(){
     const dialog = this.dialog.open(DialogEditContactComponent);
-    dialog.componentInstance.user = this.user;
+    dialog.componentInstance.user = new User(this.user.toJSON());
   }
 }
