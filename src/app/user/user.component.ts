@@ -36,10 +36,7 @@ export class UserComponent {
       this.allUsers = [];                           // reset array
       allUsersDoc.forEach(singleUserDoc =>{         // firebase document loop => read single entry
         this.allUsers.push(this.setUserObject(singleUserDoc.data(), singleUserDoc.id));   // push single entry into array
-        // console.log('User Liste: ', singleUserDoc.data())
-        // console.log('User Id: ', singleUserDoc.id)
       });
-      // console.log(this.allUsers);
     });
   }
 

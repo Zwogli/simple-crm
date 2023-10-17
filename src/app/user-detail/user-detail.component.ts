@@ -28,17 +28,19 @@ export class UserDetailComponent {
     this.user = new User(userDetails);
   }
 
-  getSingleDocReference(collId: string, docId: string) {5
+  getSingleDocReference(collId: string, docId: string) {
     return doc(collection(this.firestore, collId), docId);
   }
 
   editAdress(){
     const dialog = this.dialog.open(DialogEditAdressComponent); // define dialog
     dialog.componentInstance.user = new User(this.user.toJSON()); // copy from user address
+    dialog.componentInstance.currentUserId = this.currentUserId;
   }
 
   editContact(){
     const dialog = this.dialog.open(DialogEditContactComponent);
     dialog.componentInstance.user = new User(this.user.toJSON());
+    dialog.componentInstance.currentUserId = this.currentUserId;
   }
 }
