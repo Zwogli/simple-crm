@@ -10,6 +10,7 @@ import { User } from 'src/models/user.class';
 export class DialogEditContactComponent {
   user: User;
   loading: boolean = false;
+  birthDate: Date;
 
   constructor(public dialog: MatDialogRef<DialogEditContactComponent>){} 
 
