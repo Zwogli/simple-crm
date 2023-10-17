@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { User } from 'src/models/user.class';
 
 @Component({
   selector: 'app-dialog-edit-contact',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./dialog-edit-contact.component.scss']
 })
 export class DialogEditContactComponent {
+  user: User;
+  loading: boolean = false;
 
+  constructor(public dialog: MatDialogRef<DialogEditContactComponent>){} 
+
+  close(){}
+
+  saveUser(){}
 }

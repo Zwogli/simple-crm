@@ -33,10 +33,12 @@ export class UserDetailComponent {
   }
 
   editAdress(){
-    this.dialog.open(DialogEditAdressComponent);
+    const dialog = this.dialog.open(DialogEditAdressComponent); // define dialog
+    dialog.componentInstance.user = this.user; // formed passing the variables to the dialog
   }
 
   editContact(){
-    this.dialog.open(DialogEditContactComponent);
+    const dialog = this.dialog.open(DialogEditContactComponent);
+    dialog.componentInstance.user = this.user;
   }
 }
