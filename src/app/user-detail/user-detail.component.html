@@ -1,4 +1,11 @@
 <mat-card class="user__detail-header">
+
+  <button mat-icon-button [matMenuTriggerFor]="menuContact" class="menu__pin-rigth-up">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menuContact="matMenu" xPosition="before">
+    <button mat-menu-item (click)="editContact()">Edit contact</button>
+  </mat-menu>
   
   <img src="assets/img/avatar-woman.png" alt="avatar">
   <div class="user__detail-header-details">
@@ -10,9 +17,12 @@
 
 <mat-card class="mt-32">
 
-  <button mat-icon-button class="menu__pin-rigth-up" (click)="openDialogAdress()">
+  <button mat-icon-button [matMenuTriggerFor]="menuAdress" class="menu__pin-rigth-up">
     <mat-icon>more_vert</mat-icon>
   </button>
+  <mat-menu #menuAdress="matMenu" xPosition="before">
+    <button mat-menu-item (click)="editAdress()">Edit address</button>
+  </mat-menu>
 
 
   <mat-card-header>

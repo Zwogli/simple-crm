@@ -30,4 +30,10 @@ export class UserDetailComponent {
   }
 
   openDialogAdress(){}
+
+  openDialogContact(){}
+
+  editAdress(){}
+
+  editContact(){}
 }
