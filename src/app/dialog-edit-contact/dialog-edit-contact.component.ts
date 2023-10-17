@@ -13,7 +13,7 @@ export class DialogEditContactComponent {
 
   constructor(public dialog: MatDialogRef<DialogEditContactComponent>){} 
 
-  close(){}
+  closeDialogContact(){}
 
-  saveUser(){}
+  saveUserDialogContact(){}
 }
